@@ -1,0 +1,12 @@
+version: "3.2"
+services:
+        web:
+                build:
+                        dockerfile: ./chatterbox-karaf-assembly/Dockerfile
+                        context: .
+                ports: 
+                - "80:8080"
+                volumes: 
+                        - type: bind
+                          source: $HOME/.m2
+                          target: /root/.m2

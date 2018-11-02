@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.aathif.chatterbox</groupId>
+  <artifactId>chatterbox-parent</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  
+  	<properties>
+		<plugin.apache.karaf.maven>4.0.2</plugin.apache.karaf.maven>
+		<org.apache.karaf>4.0.4</org.apache.karaf>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.apache.karaf.features</groupId>
+				<artifactId>framework</artifactId>
+				<type>kar</type>
+				<version>${org.apache.karaf}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.karaf.features</groupId>
+				<artifactId>standard</artifactId>
+				<classifier>features</classifier>
+				<type>xml</type>
+				<version>${org.apache.karaf}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.karaf.log</groupId>
+				<artifactId>org.apache.karaf.log.core</artifactId>
+				<version>${org.apache.karaf}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.karaf.tooling</groupId>
+					<artifactId>karaf-maven-plugin</artifactId>
+					<version>${plugin.apache.karaf.maven}</version>
+					<extensions>true</extensions>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-install-plugin</artifactId>
+					<version>2.5.2</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+  
+  
+</project>
