@@ -1,15 +1,22 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<parent>
 		<groupId>com.aathif.chatterbox</groupId>
 		<artifactId>chatterbox-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>../chatterbox-parent/</relativePath>
 	</parent>
-	<artifactId>chatterbox-services</artifactId>
+	<artifactId>chatterbox-api</artifactId>
 
 	<dependencies>
+		<dependency>
+			<groupId>com.aathif.chatterbox</groupId>
+			<artifactId>chatterbox-services</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.osgi</groupId>
 			<artifactId>osgi_R4_core</artifactId>
@@ -26,10 +33,9 @@
 				<configuration>
 					<archive>
 						<manifestEntries>
-							<Bundle-SymbolicName>chatterbox-services</Bundle-SymbolicName>
-							<Bundle-Activator>com.aathif.chatterbox.App</Bundle-Activator>
-							<Import-Package>org.osgi.framework</Import-Package>
-							<Export-Package>com.aathif.chatterbox.services</Export-Package>
+							<Bundle-SymbolicName>chatterbox-api</Bundle-SymbolicName>
+							<Bundle-Activator>com.aathif.chatterbox.api.Api</Bundle-Activator>
+							<Import-Package>org.osgi.framework, com.aathif.chatterbox.services</Import-Package>
 						</manifestEntries>
 					</archive>
 				</configuration>

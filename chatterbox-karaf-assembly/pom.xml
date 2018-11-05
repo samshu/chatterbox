@@ -6,6 +6,7 @@
 		<groupId>com.aathif.chatterbox</groupId>
 		<artifactId>chatterbox-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../chatterbox-parent/</relativePath>
 	</parent>
 	<artifactId>chatterbox-karaf-assembly</artifactId>
 	<packaging>karaf-assembly</packaging>
